@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>Sublime Text</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.asuth.sublhandler</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -22,7 +22,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>org.unknownplace.sublhandler</string>
+			<string>org.asuth.sublhandler</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>subl</string>
@@ -31,6 +31,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.1</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.developer-tools</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>

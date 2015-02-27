@@ -11,6 +11,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		99FDA5E1177C6BD400F9E726 /* Sublime Text.icns in Resources */ = {isa = PBXBuildFile; fileRef = 99FDA5DF177C6A6D00F9E726 /* Sublime Text.icns */; };
 		A07878C2109C002C004947EC /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = A07878BF109C002C004947EC /* App.m */; };
 		A07878C3109C002C004947EC /* NSURL+L0URLParsing.m in Sources */ = {isa = PBXBuildFile; fileRef = A07878C1109C002C004947EC /* NSURL+L0URLParsing.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* SublHandler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SublHandler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FDA5DF177C6A6D00F9E726 /* Sublime Text.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Sublime Text.icns"; sourceTree = "<group>"; };
 		A07878BE109C002C004947EC /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = App.h; path = Classes/App.h; sourceTree = "<group>"; };
 		A07878BF109C002C004947EC /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = App.m; path = Classes/App.m; sourceTree = "<group>"; };
 		A07878C0109C002C004947EC /* NSURL+L0URLParsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURL+L0URLParsing.h"; path = "Classes/NSURL+L0URLParsing.h"; sourceTree = "<group>"; };
@@ -82,10 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
 			);
 			name = "emacs-handler";
 			sourceTree = "<group>";
@@ -101,6 +103,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				99FDA5DF177C6A6D00F9E726 /* Sublime Text.icns */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -169,6 +172,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				99FDA5E1177C6BD400F9E726 /* Sublime Text.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

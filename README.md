@@ -1,8 +1,8 @@
-SublimeText 2 URLHandler on OS X
-=======================
-This application enables SublimeText 2 to open `subl:` urls, as Textmate has as described [here](http://manual.macromates.com/en/using_textmate_from_terminal#url_scheme_html)
+SublimeText 2 and 3 URLHandler on OS X
+================================
+This application enables SublimeText to open `subl:` urls, as Textmate has as described [here](http://manual.macromates.com/en/using_textmate_from_terminal#url_scheme_html)
 
-    subl://open/?file=/path/to/file.txt&line=10&column=2
+    subl://open/?url=file:///path/to/file.txt&line=10&column=2
 
 Installation
 ------------
@@ -13,7 +13,8 @@ Select `SublHandler` -> `Preferences...`, then change the path for the subl bina
 Test it
 -------
 Open terminal and type:
-    open 'subl://open/?file=/etc/paths&line=5'
+
+    open 'subl://open/?url=file:///etc/paths&line=5'
 
 
 Uninstalling

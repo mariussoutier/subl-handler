@@ -25,7 +25,7 @@
 }
 
 /**
- * Handles URLs with format subl://open/?file=/path/to/file&line=11&col=2
+ * Handles URLs with format subl://open/?url=file:///path/to/file&line=11&column=2
  * Both line and col are optional.
  */
 -(void)handleGetURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent
@@ -34,25 +34,28 @@
   
   if ([url.host isEqualToString:@"open"]) {
     NSDictionary *params = [url dictionaryByDecodingQueryString];
-    NSString* file = [params objectForKey:@"file"];
+    NSString *fileURI = [params objectForKey:@"url"];
     
-    if (file) {
+    if (fileURI) {
+      NSString *fileName = [fileURI componentsSeparatedByString:@"://"][1];
       NSString *line = [params objectForKey:@"line"];
-      NSString *column = [params objectForKey:@"col"];
+      NSString *column = [params objectForKey:@"column"];
       
-      if (file) {
-        NSTask *task = [[NSTask alloc] init];
-        [task setLaunchPath:self.sublimePath];
-        NSString* filePath = [NSString stringWithFormat:@"%@:%ld:%ld", file, line ? [line integerValue] : 1, [column integerValue]];
-        task.arguments = @[filePath];
-        [task launch];
-        NSWorkspace *sharedWorkspace = [NSWorkspace sharedWorkspace];
-        NSString *appPath = [sharedWorkspace fullPathForApplication:@"Sublime Text 2"];
-        NSString *identifier = [[NSBundle bundleWithPath:appPath] bundleIdentifier];
-        NSArray *selectedApps = [NSRunningApplication runningApplicationsWithBundleIdentifier:identifier];
-        NSRunningApplication *runningApp = (NSRunningApplication*)[selectedApps objectAtIndex:0];
-        [runningApp activateWithOptions:NSApplicationActivateAllWindows];
+      NSTask *task = [[NSTask alloc] init];
+      [task setLaunchPath:self.sublimePath];
+      NSString* filePath = [NSString stringWithFormat:@"%@:%ld:%ld", fileName, line ? [line integerValue] : 1, [column integerValue]];
+      task.arguments = @[filePath];
+      [task launch];
+      NSWorkspace *sharedWorkspace = [NSWorkspace sharedWorkspace];
+      NSString *appPath = [sharedWorkspace fullPathForApplication:@"Sublime Text 2"];
+      NSFileManager *fileManager = [NSFileManager new];
+      if (![fileManager isReadableFileAtPath:appPath]) {
+        appPath = [sharedWorkspace fullPathForApplication:@"Sublime Text"];
       }
+      NSString *identifier = [[NSBundle bundleWithPath:appPath] bundleIdentifier];
+      NSArray *selectedApps = [NSRunningApplication runningApplicationsWithBundleIdentifier:identifier];
+      NSRunningApplication *runningApp = (NSRunningApplication*)[selectedApps objectAtIndex:0];
+      [runningApp activateWithOptions:NSApplicationActivateAllWindows];
     }
   }
   
